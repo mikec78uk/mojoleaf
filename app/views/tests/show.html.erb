@@ -1,0 +1,77 @@
+<!--http://mojoleaf.dev/tests/12 -->
+<%= render partial: 'layouts/header' %>
+
+
+<div class="wrapper">
+<% timesuffix = @test.end_date.strftime('%p').downcase %>
+<div class="group">
+<h2 class="congrats">Congratulations<span class="h2-sub">Your test has been successfully added</span></h2>
+</div>
+<div class="uploaded-test group">
+	<div class="conf-frame">
+		<div class="conf-img"><%= image_tag @test.image(:thumbnail), class:  'uploaded-test-details'%> 
+		</div>
+	</div>
+
+	<div class="uploaded-test-details">
+		<h3><%= @test.title %></h3>
+		
+		<p>Your test will last for <%= pluralize @test.duration, "day" %> and end on <strong><%= @test.end_date.strftime('%A, %e %B %Y') %></strong> around <%= @test.end_date.strftime('%l.%M') %>  <%=timesuffix%></p>
+	</div>
+</div>
+
+
+
+<div class="group">
+	<h3>Spread the word</h3>
+	
+	<div class="spread">
+	
+		<p>Make sure you spread the word and let people know you want feedback, otherwise no one will know your design is there and you won't get the feedback you're after.</p>
+	
+	</div>
+	<ul class="share-links">
+		<li class="quick-link share">Link: <a href="<%= @test.short_url %>"><%= @test.short_url %></a></li>
+		<li class="facebook share"><a href="https://www.facebook.com/sharer.php?u=<%=@test.short_url%>&t=Can you spare a second to let me know what you think of this design?"  target="_blank">Share it</a></li>
+		<li class="twitter share"><a href="http://twitter.com/home/?status=Can you spare a second to let me know what you think of this design? <%=@test.short_url%>" target="_blank" >Tweet it </a></li>
+
+
+
+
+
+
+
+	</ul>
+
+</div>
+
+<div class="next-steps">
+	<h3>What happens next?</h3>
+	<p>When your test ends, the results will be emailed directly to you. </p>
+	<p>Alternatively, you can see how your test is going at any time from <%= link_to "Your Dashboard", tests_path %>. </p>
+</div>
+
+
+<!--<%= image_tag @test.image(:large) %>-->
+
+<!--full link to test: <%= link_to request.original_url, new_test_result_path(@test) %>-->
+
+<!--<%= link_to @test.short_url, @test.short_url, target: "_blank" %>-->
+<!-- 
+%A = full name of day
+%e = date
+%B = full month
+%Y = year
+
+at around 
+%l  = hour
+%M = minute
+%p = Am/pm
+%Z = timezone
+
+For time formats: http://www.wetware.co.nz/2009/07/rails-date-formats-strftime/ -->
+
+
+
+
+</div>

@@ -1,0 +1,84 @@
+<%= render partial: 'layouts/header' %>
+
+
+<div class="wrapper">
+	<div class="dashboard-header group">
+		<h2 class="congrats">Your Dashboard</h2>
+	
+	
+		<%= link_to "Add a design", new_test_path, class: "add-secondary-button"%>
+	</div>
+	
+      <% if flash[:success].present? %>
+          <div class="alert-box success">
+            <%= flash[:success] %>
+          </div>
+      <% end %>
+
+      <% if flash[:error].present? %>
+          <div data-alert class="alert-box foundation">
+            <%= flash[:error] %>
+          </div>
+      <% end %>
+
+
+<% unless @completed_tests.blank? && @current_tests.blank? %>
+		
+			<% unless @completed_tests.blank? %>
+				<h3 class="dashboard-section">You've finished gathering feedback on <%= pluralize @completed_tests.size, "design" %></h3>
+			<% end %>
+		
+		
+			<% @completed_tests.each do |test| %>
+			<div class="test-listing">
+	
+						<% if test.image? %>
+							<%= link_to (image_tag (test.image(:thumbnail))), test_results_path(test) %>
+							<% end %>
+					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, new_test_result_path(test) %></span>
+	
+						
+					</br><strong><%= pluralize test.test_users.size, "person" %></strong> gave their feedback</p>
+	
+										<p class="listing-details-cta text-centre"><%= link_to "Final Results", test_results_path(test), class: "view-results-button" %></p>
+					
+			</div>
+			<% end %>
+		
+	
+			<% unless @current_tests.blank? %>
+			<h3 class="dashboard-section">You're currently gathering feedback on <%= pluralize @current_tests.size, "design" %></h3>
+			<% end %>
+			<% @current_tests.each do |test| %>
+			<div class="test-listing">
+	
+						<% if test.image? %>
+							<%= link_to (image_tag (test.image(:thumbnail))), test_results_path(test) %>
+						<% end %>
+					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, new_test_result_path(test) %></span>
+	
+						
+					</br><strong><%= pluralize test.test_users.size, "person" %></strong> responded so far with <strong><%= distance_of_time_in_words(DateTime.now,test.end_date)
+	%> remaining</strong></p>
+	
+					<p class="listing-details-cta text-centre"><%= link_to "View Results So Far", test_results_path(test), class: "view-results-button" %></p>
+					
+			</div>
+			<%end%>
+			
+	
+			
+			<% else %>
+					
+				<p class="no-indent">To get started, just <%= link_to "add a design", new_test_path, class: "blue-link"%>.</p>
+						
+	<% end	%>		
+
+
+
+
+<div class="feedback">	
+<h3>We're always interested to get <i>your</i> feedback</h3>
+<p class="no-indent">We'd love to hear any feedback you have about mojoleaf, whether it's how it helped you in the design process or whether there's something you'd like to change. Whatever it is, please don't be shy and <a href ="http://www.hellomike.co.uk/contact-me/" target="_blank">get in touch</a>.</p>
+</div>	
+</div>

@@ -1,0 +1,26 @@
+<%= render partial: 'layouts/header' %>
+
+
+ <div class="wrapper">
+ 
+		<div class="test-form">
+					<h2>Add your design</h2>
+					<%= simple_form_for @test do |form| %>
+		
+						<%= form.input :title, label: "What would you like to call your test?", hint: "This is for your reference and won't be shown to participants"%>
+						<%= form.input :duration, collection: ['1 day', '2 days', '3 days', '4 days', '5 days', '6 days', '7 days (1 week)', '8 days', '9 days', '10 days', '11 days', '12 days', '13 days', '14 days (2 weeks)', '15 days', '16 days', '17 days', '18 days', '19 days', '20 days', '21 days (3 weeks)'], selected: '7 days (1 week)', label: "How long do you want your test to run for?", hint: "You can access your results from the dashboard at anytime to see how it's going" %>
+					
+					
+		
+						<%= form.input :image, label: "Which design would you like feedback on?", input_html: { class: 'grey-background' } %>
+				
+					
+					
+					<div class="centre">	
+						<%= form.button :submit, "Start getting feedback" %>
+					</div>
+					<% end %>
+		
+		</div>
+
+</div>

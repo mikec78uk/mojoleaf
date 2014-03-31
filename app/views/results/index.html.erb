@@ -1,0 +1,288 @@
+<%= render partial: 'layouts/header' %>
+
+
+<div class="wrapper">
+
+			<div class="test-index-listing">
+	
+						<% if @test.image? %>
+							<%= image_tag (@test.image(:thumbnail)) %>
+						<% end %>
+	
+					<p class="result-details-text"> Results for:</br>
+					<span class="results-index-title"><%= @test.title %></span></br>
+					
+					
+					<% if @test.end_date < DateTime.now %>
+								
+								
+					<strong><%= pluralize @test.test_users.size, "person" %></strong> responded to your request for feedback <i><span class="closed">(This test is now closed)</span></i>		
+				
+				
+				<%else%>
+				
+					<strong><%= pluralize @test.test_users.size, "person" %></strong> responded so far with <strong><%= distance_of_time_in_words(DateTime.now,@test.end_date)
+				%> remaining</strong>
+				
+				<%end%>
+			
+				</br>
+				<%= link_to "Delete this design", test_path(@test), method: :delete, confirm: "Are you sure you want to delete this design?" %></p>
+			
+			</div>
+
+
+
+
+
+
+
+
+<% @test.test_users.each do |user| %>
+
+	<% if user.test_options.any? %>
+
+		<h2>User #<%= user.id %></h2>
+		
+
+		<!-- SEPERATES INTO GOOD AND BAD BY USER -->
+		<h3>Good words</h3>
+		<ul>
+			<% user.test_options.where(is_good: true).each do |test_option| %>
+
+				<% if test_option.option.present? %>
+					<li><%= test_option.option.option_name %></li>
+				<% end %>
+			<% end %>
+		</ul>
+
+		<h3>Bad words</h3>
+		<ul>
+			<% user.test_options.where(is_good: false).each do |test_option| %>
+
+				<% if test_option.option.present? %>
+					<li><%= test_option.option.option_name %></li>
+				<% end %>
+			<% end %>
+		</ul> 
+
+	<% end %>
+<% end %>
+
+
+
+
+
+<!-- WHAT IT SHOULD FIT INTO -->
+
+
+
+
+	<h2>At a glance</h2>
+
+
+	<div id="at-a-glance" class="wordcloud">
+		
+		<!--<span data-weight=" Count of the word "> option.option.name </span>-->
+
+		<span data-weight="26">Appealing</span>
+		<span data-weight="38">Attractive</span>
+		<span data-weight="59">Calm</span>
+		<span data-weight="21">Cheerful</span>
+		<span data-weight="18">Clean</span>
+		<span data-weight="24">Empowering</span>
+		<span data-weight="21">Entertaining</span>
+		<span data-weight="32">Friendly</span>
+		<span data-weight="15">Fun</span>
+		<span data-weight="6">Entertaining</span>
+		<span data-weight="24">Friendly</span>
+		<span data-weight="6">Fun</span>
+		<span data-weight="6">High Quality</span>
+		<span data-weight="6">Innovative</span>
+		<span data-weight="38">Inspiring</span>
+		<span data-weight="21">Professional</span>
+		<span data-weight="22">Simple</span>
+		<span data-weight="19">Trustworthy</span>
+		<span data-weight="21">Boring</span>
+		<span data-weight="54">Busy</span>
+		<span data-weight="19">Cluttered</span>
+		<span data-weight="28">Complex</span>
+		<span data-weight="19">Confusing</span>
+		<span data-weight="21">Dated</span>
+		<span data-weight="16">Dull</span>
+		<span data-weight="18">Hard to Use</span>
+		<span data-weight="43">Illogical</span>
+		<span data-weight="16">Intimidating</span>
+		<span data-weight="17">Old</span>
+		<span data-weight="7">Ordinary</span>
+		<span data-weight="6">Overbearing</span>
+		<span data-weight="6">Poor Quality</span>
+		<span data-weight="38">Unattractive</span>
+	</div>
+	
+	
+	
+	<h2>In detail</h2>
+	<div class="chart">
+		<p class="chart-header">
+		<span class="positive">Positive</span> vs <span class="negative">Negative</span></p>
+		<canvas id="good-vs-bad" height="200" width="200"></canvas>
+	</div>
+	
+	
+	
+<div class="group">	
+	
+	<!-- Good Words listed in count descending -->
+	<table class="word-table float-left group">
+	  <thead>
+	    <tr class="positive-header">
+	      <th>Positive Words</th>
+	      <th>Times Chosen</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>Appealing</td>
+	      <td>40</td>
+	    </tr>
+	    <tr>
+	      <td>Attractive</td>
+	      <td>38</td>
+	    </tr>
+	    <tr>
+	      <td>Calm</td>
+	      <td>25</td>
+	    </tr>
+	    <tr>
+	      <td>Cheerful</td>
+	      <td>12</td>
+	    </tr>
+	    <tr>
+	      <td>Clean</td>
+	      <td>10</td>
+	    </tr>
+	    <tr>
+	      <td>Empowering</td>
+	      <td>10</td>
+	    </tr>
+	    <tr>
+	      <td>Entertaining</td>
+	      <td>8</td>
+	    </tr>
+	    
+	  </tbody>
+	</table>
+
+	
+	<!-- Good Words listed in count descending -->
+	<table class="word-table float-right group">
+	  <thead>
+	    <tr class="negative-header">
+	      <th>Negative Words</th>
+	      <th>Times Chosen</th>
+	    </tr>
+	  </thead>
+	  <tbody>
+	    <tr>
+	      <td>Boring</td>
+	      <td>40</td>
+	    </tr>
+	    <tr>
+	      <td>Busy</td>
+	      <td>38</td>
+	    </tr>
+	    <tr>
+	      <td>Cluttered</td>
+	      <td>25</td>
+	    </tr>
+	    <tr>
+	      <td>Complex</td>
+	      <td>12</td>
+	    </tr>
+	    <tr>
+	      <td>Confusing</td>
+	      <td>10</td>
+	    </tr>
+	    <tr>
+	      <td>Dated</td>
+	      <td>10</td>
+	    </tr>
+	    <tr>
+	      <td>Dull</td>
+	      <td>8</td>
+	    </tr>
+	  </tbody>
+	</table>
+
+</div>
+
+
+
+	<% unless @test.end_date < DateTime.now %>	
+		<div class="spread-results group">
+			<h3>Spread the word</h3>
+			
+			<div class="spread">
+			
+				<p>Make sure you spread the word and let people know you want feedback, otherwise no one will know your design is there and you won't get the feedback you're after.</p>
+			
+			</div>
+			<ul class="share-links">
+				<li class="quick-link share">Link: <a href="<%= @test.short_url %>"><%= @test.short_url %></a></li>
+				<li class="facebook share"><a href="https://www.facebook.com/sharer.php?u=<%=@test.short_url%>&t=Can you spare a second to let me know what you think of this design?"  target="_blank">Ask for feedback via facebook</a></li>
+				<li class="twitter share"><a href="http://twitter.com/home/?status=Can you spare a second to let me know what you think of this design? <%=@test.short_url%>" target="_blank" >Ask for feedback via twitter</a></li>
+		
+			</ul>
+		
+		</div>
+	
+	<% end %>
+
+</div>
+
+<script>
+	$(document).ready(function(){
+		$("#at-a-glance").awesomeCloud({
+			"size" : {
+				"grid" : 16,
+				"normalize" : false
+			},
+			"color" : {
+				"start" : "#7f8c8d",
+				"end" : "#34495e"
+			},
+			"options" : {
+				"color" : "gradient",
+				"rotationRatio" : 0,
+				"printMultiplier" : 3.5,
+				"sort" : "random"
+			},
+			"font" : "sans-serif",
+			"shape" : "square"
+		});
+	});
+</script>
+
+<script>
+
+	var pieData = [
+			{
+				//Bad Word Count 
+				value: 40,
+				color:"#c9025c"
+			},
+			{
+			
+				// Good Word Count 			
+				value : 190,
+				color : "#85B91E"
+			}
+
+		
+		];
+		
+
+		var myPie = new Chart(document.getElementById("good-vs-bad").getContext("2d")).Pie(pieData);
+
+</script>

@@ -1,0 +1,67 @@
+html, body {
+	height: 100%;
+}
+
+.black-body {
+	background-color: #000000;
+	/*position: fixed;
+	top: 0;
+	left: 0;*/
+	width: 100%;
+	min-height: 100%;
+}
+
+.frame {
+    width: 100%;
+    text-align: center; 
+}
+
+
+img.main-img {
+	background: #3A6F9A; 
+	vertical-align: middle;
+	max-width: 90%;
+	margin-bottom: 100px;
+}
+
+/* -------------- CHECKBOX STYLES---------------------*/
+
+
+		.checkbox {
+		    margin:10px;
+		    background-color:#EFEFEF;
+		    border-radius:4px;
+		    border:1px solid #D0D0D0;
+		    overflow:auto;
+		    float:left;
+		    width: 120px;
+		    font-size: 14px;
+		}
+
+		.checkbox:hover {
+		    background:#bdc3c7;
+		    color: #EFEFEF;
+		    
+		}
+
+		
+		input[type="checkbox"]  {
+			display: none;
+			position: relative;
+		}
+		
+		.checkbox label {
+		    text-align:center;
+		    padding: 10px 20px 10px 20px;
+		    display:block;
+		    margin: 0px;
+		    
+		}
+
+
+		.check_boxes input:checked + label {
+		    background-color: #2980b9;
+		    color:#fff;
+		}
+		
+		

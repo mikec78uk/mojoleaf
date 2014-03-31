@@ -1,0 +1,80 @@
+		<script>
+
+		     $(document).ready(function() {
+	    
+		        var $submit = $('input[type="submit"]').hide(),
+		            $cbs = $('input[type="checkbox"]');
+		            $cbs.click(function() {
+		                $submit.toggle( $cbs.is(":checked") );
+		            });
+	    
+	    	});
+
+		</script>
+
+<div class="black-body">
+
+	<div class="frame">
+			<%= image_tag @test.image(:large), class: 'main-img' %>
+	</div>
+
+		<div class= "feedback-bar">
+			<button id="trigger-overlay" type="button" class ="button">What do you think of this design?</button>
+		</div>
+
+<div class="overlay overlay-simplegenie">
+
+				<div class="overlay-wrapper">
+
+					<div class="group">
+						<button type="button" class="overlay-close">Hide</button>
+					</div>
+
+
+	
+				<%= simple_form_for [@test, @test_user], url: test_results_path, method: :post do |form| %>
+					<%= simple_fields_for :results do |f| %>
+						<div class="words-divider group">
+						<h2 class="overlay-heading">I like it because it's:</h2>
+						<p class="tip">Select all that apply</p>
+						
+						<%= f.input :chosen_words, collection: Option.where(category: "good"), as: :check_boxes, label: false %>	
+						</div>
+						
+						<div class="words-divider bad group">					
+						<h2 class="overlay-heading">I <i><u>don't</u></i> like it because it's:</h2>
+						<p class="tip">Select all that apply</p>
+						
+						<%= f.input :bad_chosen_words, collection: Option.where(category: "bad"), as: :check_boxes, label: false %>
+						</div>
+						
+						<% end %>
+	
+			<div class= "submit-button group" >
+				<%= form.button :submit, "Submit feedback", class: 'secondary' %>
+			</div>
+				<% end %>
+				
+			</div>
+				
+</div>
+<!--form.input :chosen_word, collection: ['Appealing', 'Attractive', 'Calm', 'Cheerful', 'Clean', 'Empowering', 'Entertaining', 'Exciting', 'Friendly', 'Fun', 'High Quality', 'Innovative', 'Inspiring', 'Professional', 'Simple', 'Trustworthy'], as: :check_boxes, label: false-->
+
+<!--form.input :chosen_word, collection: ['Boring', 'Busy', 'Cluttered', 'Complex', 'Confusing', 'Dated', 'Dull', 'Hard to use', 'Illogical', 'Intimidating', 'Old', 'Ordinary', 'Overbearing', 'Poor Quality', 'Unattractive', 'Unrefined'], as: :check_boxes, label: false-->
+
+	<!--<script type="text/javascript">
+
+	     $(document).ready(function() {
+    
+	        var $submit = $("#submit_prog").hide(),
+	            $cbs = $('input[name="prog"]').click(function() {
+	                $submit.toggle( $cbs.is(":checked") );
+	            });
+    
+    	});
+
+	</script>-->
+	
+
+	
+</div>

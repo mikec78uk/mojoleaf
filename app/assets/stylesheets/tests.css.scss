@@ -1,0 +1,989 @@
+// Place all the styles related to the tests controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+body {
+	font-family: sans-serif;
+	color: #313131;
+	font-size: 0.9em;
+	
+	
+}
+
+strong {
+	font-weight: bold;
+}
+
+i {
+	font-style: italic; 
+}
+
+.wrapper {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 80%;
+	padding: 0px 10px;
+}
+
+.wrapper-noindent {
+	margin: 0 auto;
+	max-width: 960px;
+	width: 80%;
+}
+
+h2 {
+	font-size: 1.5em;
+	padding: 20px 0px;
+	border-bottom: solid 1px #eee;
+}
+
+h2.congrats {
+	font-size: 2em;
+	border: none;
+	display: block;
+	float: left;
+	line-height: 1.2em;
+}
+
+h2.thanks {
+	text-align: center;
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+.h2-sub {
+	display: block;
+	font-size: 0.8em;
+}
+
+h2.dashboard {
+	font-size: 2em;
+	border: none;
+	line-height: 1.2em;
+}
+
+
+
+h3 {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	}
+	
+h3.indent {
+	padding-left: 10px;
+}	
+	
+h3.dashboard {
+	padding-left: 10px;
+	margin-top: 40px;
+}		
+
+h3.dashboard-section {
+	padding: 10px;
+	background-color: #eee;
+	margin-bottom: 10px;
+	border: solid 1px #eee;
+	width: inherit;
+	/*display: inline-flex;*/
+	float: left;
+	
+}	
+	
+p {
+	line-height: 16px;
+}
+
+p.no-indent {
+	padding-left: 0px;
+}
+
+
+.thanks-homepage {
+	width: 100%;
+}
+
+/*------------- Reiterate Test Details -------*/
+
+.uploaded-test {
+	padding: 20px;
+	border: solid 1px #eee;
+	margin-bottom: 20px;
+}
+
+
+.uploaded-test-details {
+	float: left;
+	max-width: 80%;
+}
+
+.uploaded-test-details h3, p {
+	padding-left: 20px;
+	}
+
+
+/*------------- Spread the word -------*/
+
+.spread {
+	width: 45%;
+	float: left;
+	display: block;
+}
+
+ul.share-links {
+	width: 45%;
+	float: right;
+	display: block;
+}
+
+.spread p {
+	padding: 0;
+	text-align: justify;
+}
+
+li.share {
+	padding: 10px;
+	margin-bottom: 10px;
+	width: 100%;
+	min-height: 40px;
+	vertical-align: middle;
+	line-height: 20px;
+}
+
+.facebook a, .twitter a {
+	color: #FFF;
+	text-decoration: none;
+	padding-left: 50px;
+}
+
+.facebook {
+	background: url(/assets/facebook.png) 20px 10px no-repeat #287cb4;
+	display: block;	
+}
+
+.twitter {
+	background: url(/assets/twitter.png) 20px 12px no-repeat #3294d6;
+	display: block;
+	}
+
+li.quick-link {
+		background: url(/assets/link.png) 15px 15px no-repeat #eee;
+		padding-left: 50px;
+}
+.quick-link a {
+		padding-left: 10px;
+		text-decoration: none;
+		font-weight: bold;
+		color: #313131;
+}
+
+
+.next-steps {
+	margin: 20px 0 50px 0;
+	border-top: solid 1px #eee;
+	padding-top: 20px;
+	
+}
+
+.next-steps p{
+	padding-left: 0px;
+}
+
+
+
+/* ------------ Nav ------------ */
+
+nav {
+	width: 100%;
+	display: block;
+	margin-top: 10px;
+	margin-bottom: 30px;
+	border-bottom: solid 1px #eee;
+	padding: 0 20px 10px 20px;
+	
+}
+
+
+nav a {
+	text-decoration: none;
+	color: #999;
+	display: block;
+	float: right;
+	padding: 10px 20px;
+	margin-left: 10px;
+	border: solid 1px #eee;
+	
+}
+
+
+nav li a {
+	margin-top: 14px;
+}
+
+
+	.logo {
+	    background: url("/assets/logo-tree.svg") repeat scroll left top #85B91E;
+	    float: left;
+	    height: 60px;
+	    margin: 0;
+	    text-indent: -9999px;
+	    /*transition: background-position 0.5s ease 0s;
+	    white-space: nowrap;*/
+	    width: 60px;
+	    -webkit-background-size: 60px 60px;
+		-moz-background-size: 60px 60px;
+		-o-background-size: 60px 60px;
+	    background-size: 60px 60px;
+
+		}
+	/*.logo:hover, .logo:active {
+		    background-position: right top;
+		}*/
+	/*@media not all, (min-resolution: 192dpi) {
+		.logo {
+			    background-image: url("/assets/logo-sub@2x.png");
+			    background-size: 60px 60px;
+			}
+		}*/
+	.logo a {
+		    display: block;
+		    height: 60px;
+		    width: 60px;
+		    border: none;
+		}                       
+
+/* ------------ CENTERED FORM ------------ */
+.test-form {
+	margin: 0 auto;
+	max-width: 500px;
+	border: solid 1px #eee;
+	padding: 0px 20px 30px 20px;
+	/*margin-top: 50px;*/
+	border-radius: 5px;
+}
+
+/* ------------ FORM FIELDS ------------ */
+
+
+/* Hides mandatory field market */
+
+	abbr {
+		display: none;
+	}
+
+/* Form Fields */
+
+	input[type="text"] {
+	    -moz-box-sizing: border-box;
+	    background-color: #FFFFFF;
+	    border: 1px solid #CCCCCC;
+	    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1) inset;
+	    color: rgba(0, 0, 0, 0.75);
+	    display: block;
+	    font-family: inherit;
+	    font-size: 0.875rem;
+	    height: 2.3125rem;
+	    padding: 0.5rem;
+	    transition: box-shadow 0.45s ease 0s, border-color 0.45s ease-in-out 0s;
+	    width: 100%;
+	    /*font-family: inherit;
+		width: 100%;
+		padding: 7px 10px;
+		border: 3px solid #eee;
+		font-size: 14px;
+		font-weight: 400;
+		resize: none;
+		outline: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;*/
+	 }
+	 
+	 
+	 input[type="text"], input[type="file"], select {
+		 margin: 10px 0px;
+	 }
+	 
+	 input[type="file"] {
+		 display: block;
+		 margin-bottom: 30px;
+	 }
+	 
+	 select {    
+	    border: 1px solid #CCCCCC;
+	    border-radius: 0;
+	    border: 1px solid #CCCCCC;
+	    border-radius: 0;
+	    background: none repeat scroll 0 0 #FAFAFA;
+	    height: 32px;
+	    min-width: 100%;
+	    line-height: 32px;
+		display: block;
+		/* width: 100%;
+		border: 3px solid #eee;
+		border-radius: 0;
+		padding: 7px 10px 7px 10px;
+		margin: 10px 0 10px 0;
+		padding: 7px 10px;
+		font: inherit;
+		font-size: 14px;
+		outline: none;
+		color: #313131;
+		-webkit-appearance: none;
+		background: #fff url(/assets/select-arrow.png) no-repeat right center;*/
+	}
+
+.grey-background {
+	width: 100%;
+	padding: 10px;
+	background-color: #ededed;
+}
+	/*select:hover { background: none repeat scroll 0 0 #F3F3F3;
+	border-color: #999999;}*/
+	 	 
+	 label {
+	 	display: block;
+		margin-top: 20px;
+	 }
+	 
+	 .field_with_hint span.hint {
+		margin-bottom: 10px;
+		padding-bottom: 10px;
+		display: block;
+		font-size: 12px;
+		color: #999;
+	}
+	
+	
+	.error {
+		color: red;
+		width: 100%;
+		padding: 10px;	
+		border: 1px solid red;
+		display: block;
+		margin-top: -20px;
+		margin-bottom: 20px;}
+	
+
+/* Submit Button */ 
+ 
+.button {
+	background-color: #85B91E;
+    border-color: #007095;
+    border-style: solid;
+    border-width: 0;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    /*font-size: 1rem;*/
+    font-weight: normal;
+    line-height: normal;
+    margin: 0px;
+    padding: 20px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease-out 0s;
+    display: inline-block;
+    text-transform: uppercase;
+
+    }
+    
+    
+.secondary {
+	background-color: #c9025c;
+}
+
+/* ---------- DASHBOARD -------*/
+
+.dashboard-header {
+	width: 100%;
+}
+
+
+.add-secondary-button {
+
+    text-decoration: none;
+	color: #ffffff;
+	padding: 10px 20px 10px 40px;
+	margin: 20px 0px;
+	display:inline-table;
+	float: right;
+	background: url(/assets/add.png) 6px 6px no-repeat #c9025c;
+	
+}
+
+
+    
+.centre {
+	text-align: center;
+}
+    
+.test-listing, .test-index-listing {
+	border: solid 1px #eee;
+	width: 100%;
+	margin: 0px 0px 20px 0px;
+	padding: 10px;
+	min-width: 300px;
+	float: left;
+	display: block;
+
+}
+
+.test-listing p {
+
+	font-size: inherit;
+	vertical-align: top;
+}
+
+.test-listing a, .test-index-listing a {
+	text-decoration: none;
+	color: #2980b9;
+	font-weight: bold;
+}
+   
+
+.listing-title {
+	font-size: 120%;
+	vertical-align: top;
+	float: left;
+
+	
+}
+
+
+
+.listing-details-text {
+	padding: 10px 0px 0px 20px;
+	/*text-align: center;*/
+	display: inline-table;
+	line-height: 40px;
+	
+}
+
+/*.listing-details-time {
+	padding: 10px 0px 0px 20px;*/
+	/*text-align: center;*/
+	/*display: inline-table;
+	line-height: 40px;
+	width: 200px;
+	
+}*/
+
+.listing-details-cta {
+	padding: 10px 0px 0px 20px;
+	/*text-align: center;*/
+	display: inline-table;
+	line-height: 40px;
+	float: right;
+	margin-right: 15px;
+	
+}
+
+a.view-results-button {
+
+	text-decoration: none;
+	color: #ffffff;
+	padding: 10px 20px 10px 20px;
+	margin: 30px 0px;
+	background-color: #2980b9;
+    font-weight: normal;
+    text-transform: uppercase;
+    font-size: 80%;
+	
+}
+
+.text-centre {
+	text-align: center;
+}
+ /* ------- FEEDBACK SECTION ON LISTINGS -----*/
+.feedback {
+	margin-top: 20px;
+	float: left;
+	border-top: solid 1px #eee;
+	padding: 10px;
+}
+
+.feedback a, .blue-link {
+	text-decoration: none;
+	color: #2980b9;
+	font-weight: bold;
+}
+    
+ /* ------- ALERT BOXES -----*/
+    
+.alert-box {
+	color: #c9025c;
+	display: block;
+	padding: 10px;
+	border: 1px solid #c9025c;
+	margin-bottom: 10px;
+}    
+    
+    
+ /* ------- RESULTS INDEX -----*/
+ 
+.results-module-text {
+	float: left;
+}
+
+.test-index-listing img {
+	vertical-align: top;
+}
+
+.result-details-text {
+	padding: 0px 20px 0px 20px;
+	/*text-align: center;*/
+	display: inline-table;
+	line-height: 30px;
+	
+}
+
+.results-index-title {
+	font-size: 1.5em;
+}
+
+.spread-results {
+	border-top: solid 1px #eee;
+	margin-top: 20px;
+}
+
+.closed {color: #c9025c;}
+
+/* Overlay style */
+.overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background: rgba(153,204,51,0.9);
+}
+
+
+/* Overlay closing cross */
+
+.overlay .overlay-close {
+	
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	border: #FFFFFF 1px solid;
+	background-color: transparent;
+	color: #FFFFFF;
+	outline: none;
+	z-index: 100;
+	cursor: pointer;
+	padding: 10px 20px;
+} 
+
+.overlay-close:hover {
+	color: rgb(153,204,51);
+	background-color: #FFFFFF;
+}
+
+.feedback-bar {
+	width: 100%;
+	background-color: rgba(0,0,0,0.8);
+	position: fixed;
+	bottom: 0;
+	min-height: 50px;
+	text-align: center;
+	color: white;
+	padding: 20px;
+}
+	
+	
+/* Effects */
+.overlay-simplegenie {
+	visibility: hidden;
+	-webkit-transform: translateY(60%) scale(0);
+	transform: translateY(60%) scale(0);
+	-webkit-transition: -webkit-transform 0.4s, visibility 0s 0.4s;
+	transition: transform 0.4s, visibility 0s 0.4s;
+}
+
+.overlay-simplegenie.open {
+	visibility: visible;
+	-webkit-transform: translateY(0%) scale(1);
+	transform: translateY(0%) scale(1);
+	-webkit-transition: -webkit-transform 0.4s;
+	transition: transform 0.4s;
+}
+
+.overlay-wrapper {
+		width: 900px;
+		margin: 0 auto;
+		padding-top:80px;
+
+	}
+	
+.submit-button {
+		width: 100%;
+		text-align: center;
+		/*margin-top: 400px;*/
+		display: block;
+
+	}
+	
+		h2.overlay-heading {
+		color: #FFFFFF;
+		font-style: normal;
+		font-size: 150%;
+		margin-top: 10px;
+		text-align: center;
+		border: none;
+		padding: 10px 0px;
+		/*margin-bottom: 10px;*/
+
+	}	
+		/* word lists */
+		
+		.words-divider {
+			display: block;
+			float: left;
+			width: 430px;
+			/*margin-left: 7%;*/
+			border-radius:4px;
+		    border:1px solid #FFFFFF;
+		    padding-bottom: 10px;
+		    margin-bottom: 30px;
+			;
+		
+		}
+		
+		.bad {
+			
+			float: right;
+		}
+	
+	.tip {
+			color: #FFFFFF;
+			font-style: italic;
+			text-align: center;
+			font-size: 90%;
+			margin-bottom: 10px;
+			display: block;
+			border-bottom: #FFFFFF 1px solid;
+			padding-bottom: 10px;
+		}
+		
+
+@media screen and (max-height: 30.5em) {
+		.overlay nav {
+			height: 70%;
+			font-size: 34px;
+		}
+		.overlay ul li {
+			min-height: 34px;
+		}
+	}
+ 
+
+/* --------  HomePage ------------ */
+
+
+
+
+.mojoleaf-header, .value-prop {
+	margin: 0 auto;
+	text-align: center;
+	padding: 2em 0 0;
+	max-width: 900px;
+}
+
+
+.value-prop {
+	margin-bottom: 40px;
+	border: none;
+}
+
+.mojoleaf-header h1 {
+    font-size: 2.5em;
+    font-weight: 300;
+    margin: 0;
+    margin-top: 15%;
+    
+	line-height: 1.25;
+}
+
+
+p.mojoleaf-header, a.learn-link {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+p.mojoleaf-header {
+	color: #8a8c7e;
+	font-size: 120%;
+	line-height: 1.25;
+
+}
+
+.main-cta {
+	margin: 0 auto;
+	max-width: 600px;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.main-cta a {
+	width: 200px;
+}
+
+
+a.pink {
+	background-color: #c9025c;	
+	margin-right: 30px;
+}
+
+.main {	
+	display: table;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* --- START: Learn Link  ---*/
+  p#learn {
+      bottom: 25px;
+      left: 0;
+      padding-bottom: 6px;
+      position: absolute;
+      text-align: center;
+      width: 100%;
+  }
+
+  a.learn-link {
+    color: #8a8c7e;
+    text-decoration: none;
+    background: url(/assets/green-arrow.png) no-repeat center bottom;
+    padding-bottom: 20px;
+
+  }
+
+/* --- END: Learn Link  ---*/
+
+.after {
+  background-color: red;
+  height: 1400px;
+  width: 100%;
+}
+
+.columns {
+	-moz-column-count: 2;
+	-webkit-column-count: 2;
+	column-count: 2;
+	-moz-column-gap: 40px;
+	-webkit-column-gap: 40px;
+	column-gap: 40px;
+	margin-bottom: 30px;
+}
+
+
+.tell-me-more, .why-important {
+	float: left;
+	width: 45%;
+	min-width: 300px;
+	text-align: justify;
+}
+
+.why-important {
+	float: right;
+}
+
+.tell-me-more p, .why-important p {
+	line-height: 20px;
+	margin-bottom: 20px;
+}
+
+.grey {
+	width: 100%;
+	background-color: #eee;
+	float: left;
+}
+
+.footnote {
+	margin: 40px 0px;
+	font-style: italic;
+	float: left;
+	
+}
+
+a.asterix {
+	text-decoration: none;
+	color: inherit;
+}
+
+
+/* ------ WORD CLOUD --------*/
+
+.wordcloud {
+	
+	height: 300px;
+	margin: 0.5in auto;
+	padding: 0;
+	page-break-after: always;
+	page-break-inside: avoid;
+	width: 700px;
+	}
+
+
+.chart {
+	text-align: center;
+	margin: 20px 0px;
+}
+
+p.chart-header {
+	font-size: 1.5em;
+	margin-bottom: 20px;
+}
+
+.positive {color: #85B91E;}
+.negative {color: #c9025c;}
+
+
+
+
+
+
+
+table.word-table{
+    border-collapse: collapse;
+    border-spacing: 0;
+	width:45%;
+	max-width: 450px;
+	}
+
+.float-left {float: left;}
+.float-right {float: right;}
+
+
+
+.word-table tr:nth-child(odd){ background-color:#eee; }
+.word-table tr:nth-child(even)   { background-color:#ffffff; }
+.word-table td {	
+	vertical-align:middle;
+	text-align:left;
+	padding:10px;
+
+}
+
+.positive-header {
+	background-color: #85B91E !important;
+	color: #fff;
+}
+ 
+.negative-header {
+	background-color: #c9025c !important;
+	color: #fff;
+}
+
+.word-table th { padding: 10px 10px;}
+.word-table tr > td:first-child + td { text-align: center;} /* second column */
+
+/*1 Column for Narrow Browser Windows (between 0 and 679 pixels) and Smartphones in both orientations. In this query we linearize all of the columns so that they stack vertically by setting float to none and width to auto. We also use this query to move the menu to the top of the layout and stack its links neatly in a vertical orientation. */
+@media only screen and (min-width: 0px) and (max-width: 679px) {
+
+	.test-form {
+		margin: 0 0;
+		padding: 0px ;
+		border: none;
+	}
+	
+	h2 {
+		text-align: center;
+		width: 100%;
+	}
+	
+	h3 {
+		margin-top: 20px;
+	}
+	
+	.uploaded-test {
+		text-align: center;
+	}
+	
+	.spread {
+		float: none;
+		width: 100%;
+	}
+	
+	.conf-frame {
+		width: 100%;
+		float: left;
+
+		}
+	.conf-img {
+		margin: 0 auto;
+		width: 100px;
+	}
+
+	ul.share-links {
+		margin-top: 30px;
+		float: none;
+		width: 100%;
+	}
+	
+	.word-table {
+		float: none;
+		width: 300px !important;
+	}
+	
+	.wordcloud {
+	
+	height: 600px;
+
+	width: 300px;
+	}
+
+	
+
+
+}
+
+
+/*
+@media only screen and (min-width: 680px) and (max-width: 1200px) {
+	.test-listing {
+			width: 45%;
+		}
+
+
+}*/
+
+
+
+/*Exception rules for Smartphones in Landscape orientation only. When a smartphone is turned sideways, the text will appear larger so this query contains a single rule that reduces the font-size.*/
+@media only screen and (max-device-width: 480px) and (orientation : landscape) {
+
+}
+
+/*2 Column with top spanning menu for Medium Browser Windows and Portrait Tablets. In this query we move the navigation to the top and stack the links. The sidebar and main content areas remain as columns. The interior 3-column structure inside the main content column is reflowed so that the third column drops below the first 2 and spans their width.*/
+@media only screen and (min-width: 680px) and (max-width: 979px) /*and (orientation : portrait)*/ {
+
+}
+	
+	
+
+
+/*Portrait Tablet Exceptions to adjust padding in content areas. In this query we include a simple exception rule to adjust the padding in all content areas to a value less than the default.*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+}
+/*Additional Rules for Medium Desktop Browser Windows and Landscape Tablets to reflow the inner 3-column structure. When a tablet is turned sideways there is ample room to display the menu as a column so all we want to do here is reflow the inner 3-column structure that is inside the main content column so that the third column drops below the first 2 and spans full width. This query also creates a breakpoint for desktop browsers when the window is between 680 and 979 pixels.*/
+@media only screen and (min-width: 680px) and (max-width: 979px) and (orientation : landscape) {
+
+}
+
+/*Landscape Tablet Exceptions to adjust padding and reduce font size. When a tablet is turned sideways, the text will appear larger so this query contains rules that reduces the font-size and padding.*/
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+
+}
+/*3 Column for Medium-Wide Browser Windows. This query sets a breakpoint for medium wide windows (between 980 and 1420 pixels) and reflows the inner 3-column structure inside the main content column to drop the third column below the first 2.*/
+@media only screen and (min-width: 980px) and (max-width: 1420px) {
+
+}
