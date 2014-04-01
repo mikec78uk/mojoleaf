@@ -3,6 +3,7 @@ class Test < ActiveRecord::Base
 	after_save :add_short_url
 
 	has_many :test_users
+	belongs_to :user
 	#has_many :test_options, through: :test_users
 
 	# Validates the presence of name an duration in the form.
@@ -26,6 +27,7 @@ class Test < ActiveRecord::Base
 
 		# Specify end date
 		self.end_date = DateTime.now + self.duration
+		
 		
 		# Turns the duration dropdown into an integer
 		case self.duration

@@ -1,13 +1,25 @@
 class ResultsController < ApplicationController
 
+	#Make sure logged in for the following actions
+	before_action :authenticate_user!, only: [:index, :show] 
+
 	def index
 		@test = Test.find(params[:test_id])
+		# if not the test associated with a user redirects to the homepage
+		unless @test.user_id == current_user.id
+			flash[:error] = "Whoopsie, a person's feedback is for their eye's only"
+			redirect_to root_path
+		end
+		
 	end
 
 
 	def show
 		#@result = Test.find(params[:id])
 		@test = Test.find(params[:test_id])
+
+		
+		
 	end
 
 	def new

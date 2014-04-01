@@ -1,12 +1,15 @@
 class TestsController < ApplicationController
 
+	#Make sure logged in for the following actions
+	before_action :authenticate_user!, only: [:index, :new, :show] 
+
 	def index
 		#@tests = Test.all
 		
 		# Gets all tests that have an end date before now
-		@completed_tests = Test.where(["end_date < ?", DateTime.now]).order("end_date asc")
+		@completed_tests = current_user.tests.where(["end_date < ?", DateTime.now]).order("end_date asc")
 		# Gets all tests that have an end date after now		
-		@current_tests = Test.where(["end_date > ?", DateTime.now]).order("end_date asc")
+		@current_tests = current_user.tests.where(["end_date > ?", DateTime.now]).order("end_date asc")
 		
 
 		
@@ -15,6 +18,11 @@ class TestsController < ApplicationController
 
 	def show
 		@test = Test.find(params[:id])
+		# if not the test associated with a user redirects to the homepage
+		unless @test.user_id == current_user.id
+			flash[:error] = "Whoopsie, a person's feedback is for their eye's only"
+			redirect_to root_path
+		end
 	end
 
 	def new
@@ -23,6 +31,7 @@ class TestsController < ApplicationController
 
 	def create
 		@test = Test.new(test_params)
+		@test.user_id = current_user.id
 
 		if @test.save
 			# The (@test) is for the actual test just uploaded

@@ -1,4 +1,9 @@
-
+<% if flash[:error].present? %>
+          <div data-alert class="home-flash">
+            <%= flash[:error] %>
+          </div>
+<% end %>
+      
 
 <%= render partial: 'layouts/header' %>
 

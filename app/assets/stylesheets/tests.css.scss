@@ -275,7 +275,9 @@ nav li a {
 
 /* Form Fields */
 
-	input[type="text"] {
+	input[type="text"],
+	input[type="email"],
+	input[type="password"] {
 	    -moz-box-sizing: border-box;
 	    background-color: #FFFFFF;
 	    border: 1px solid #CCCCCC;
@@ -301,7 +303,10 @@ nav li a {
 	 }
 	 
 	 
-	 input[type="text"], input[type="file"], select {
+	 input[type="text"],
+	 input[type="email"],
+	 input[type="password"],
+	 input[type="file"], select {
 		 margin: 10px 0px;
 	 }
 	 
@@ -509,6 +514,15 @@ a.view-results-button {
 	text-decoration: none;
 	color: #2980b9;
 	font-weight: bold;
+}
+
+.devise-blue-link {
+	margin-top: 560px;
+	text-decoration: none;
+	color: #2980b9;
+	font-weight: bold;
+	display: inline-block;
+	margin-top: 20px;
 }
     
  /* ------- ALERT BOXES -----*/
@@ -884,6 +898,25 @@ table.word-table{
 
 .word-table th { padding: 10px 10px;}
 .word-table tr > td:first-child + td { text-align: center;} /* second column */
+
+
+/* ---------- Devise -------*/
+
+.form-actions {
+	text-align: center;
+	margin-top: 30px;
+}
+
+/* ------- homepage flash ---------*/
+
+.home-flash {
+	text-align: center;
+	color: #fff;
+	padding: 10px 0px;
+	background-color: #c9025c;
+}
+
+
 
 /*1 Column for Narrow Browser Windows (between 0 and 679 pixels) and Smartphones in both orientations. In this query we linearize all of the columns so that they stack vertically by setting float to none and width to auto. We also use this query to move the menu to the top of the layout and stack its links neatly in a vertical orientation. */
 @media only screen and (min-width: 0px) and (max-width: 679px) {

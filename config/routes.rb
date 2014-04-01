@@ -1,6 +1,7 @@
 Mojoleaf::Application.routes.draw do
 
 
+  devise_for :users
   resources :tests do
     # Can be created within a test
     resources :results 
