@@ -224,7 +224,7 @@ nav li a {
 
 
 	.logo {
-	    background: url("/assets/logo-tree.svg") repeat scroll left top #85B91E;
+	    background: url("/assets/logo.svg") repeat scroll left top #85B91E;
 	    float: left;
 	    height: 60px;
 	    margin: 0;
@@ -527,13 +527,17 @@ a.view-results-button {
     
  /* ------- ALERT BOXES -----*/
     
-.alert-box {
+.alert-box, .error {
 	color: #c9025c;
 	display: block;
 	padding: 10px;
 	border: 1px solid #c9025c;
 	margin-bottom: 10px;
-}    
+}  
+
+.error {
+	margin-top: 0px;
+}  
     
     
  /* ------- RESULTS INDEX -----*/
@@ -909,12 +913,13 @@ table.word-table{
 
 /* ------- homepage flash ---------*/
 
-.home-flash {
+.home-flash, .error_notification {
 	text-align: center;
 	color: #fff;
 	padding: 10px 0px;
 	background-color: #c9025c;
 }
+
 
 
 

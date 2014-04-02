@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140331172221) do
+ActiveRecord::Schema.define(version: 20140402063358) do
 
   create_table "contents", force: true do |t|
     t.string   "quote"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20140331172221) do
     t.datetime "end_date"
     t.integer  "user_id"
     t.boolean  "test_completed"
-    t.boolean  "results_emailed"
+    t.boolean  "results_emailed",    default: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_url"

@@ -28,6 +28,8 @@ class Test < ActiveRecord::Base
 		# Specify end date
 		self.end_date = DateTime.now + self.duration
 		
+		self.results_emailed = false
+		
 		
 		# Turns the duration dropdown into an integer
 		case self.duration

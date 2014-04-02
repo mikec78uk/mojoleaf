@@ -3,6 +3,12 @@
             <%= flash[:error] %>
           </div>
 <% end %>
+
+<% if flash[:alert].present? %>
+          <div data-alert class="home-flash">
+            <%= flash[:alert] %>
+          </div>
+<% end %>
       
 
 <%= render partial: 'layouts/header' %>
@@ -18,9 +24,16 @@
 	</div>
 
 	<div class="main-cta">
-
+	<% if user_signed_in? %>
+		<%= link_to "Your dashboard", tests_path, class: "button pink"%>
+		
+		<%= link_to "Add your design", new_test_path, class: "button"%>
+		
+	<%else%>
 		
 		<%= link_to "Let's get started", new_test_path, class: "button"%>
+		
+	<% end %>
 		
 		
 		

@@ -7,7 +7,7 @@ class ResultsController < ApplicationController
 		@test = Test.find(params[:test_id])
 		# if not the test associated with a user redirects to the homepage
 		unless @test.user_id == current_user.id
-			flash[:error] = "Whoopsie, a person's feedback is for their eye's only"
+			flash[:error] = "Whoopsie, a person's feedback is for their eyes only"
 			redirect_to root_path
 		end
 		
