@@ -77,47 +77,18 @@
 
 
 
-
 	<h2>At a glance</h2>
 
 
 	<div id="at-a-glance" class="wordcloud">
 		
 		<!--<span data-weight=" Count of the word "> option.option.name </span>-->
+		<% @stats.each do |array| %>
 
-		<span data-weight="26">Appealing</span>
-		<span data-weight="38">Attractive</span>
-		<span data-weight="59">Calm</span>
-		<span data-weight="21">Cheerful</span>
-		<span data-weight="18">Clean</span>
-		<span data-weight="24">Empowering</span>
-		<span data-weight="21">Entertaining</span>
-		<span data-weight="32">Friendly</span>
-		<span data-weight="15">Fun</span>
-		<span data-weight="6">Entertaining</span>
-		<span data-weight="24">Friendly</span>
-		<span data-weight="6">Fun</span>
-		<span data-weight="6">High Quality</span>
-		<span data-weight="6">Innovative</span>
-		<span data-weight="38">Inspiring</span>
-		<span data-weight="21">Professional</span>
-		<span data-weight="22">Simple</span>
-		<span data-weight="19">Trustworthy</span>
-		<span data-weight="21">Boring</span>
-		<span data-weight="54">Busy</span>
-		<span data-weight="19">Cluttered</span>
-		<span data-weight="28">Complex</span>
-		<span data-weight="19">Confusing</span>
-		<span data-weight="21">Dated</span>
-		<span data-weight="16">Dull</span>
-		<span data-weight="18">Hard to Use</span>
-		<span data-weight="43">Illogical</span>
-		<span data-weight="16">Intimidating</span>
-		<span data-weight="17">Old</span>
-		<span data-weight="7">Ordinary</span>
-		<span data-weight="6">Overbearing</span>
-		<span data-weight="6">Poor Quality</span>
-		<span data-weight="38">Unattractive</span>
+			<span data-weight="<%= array[1] %>"><%= array[0].option_name %></span>
+
+		<% end %>
+
 	</div>
 	
 	
@@ -142,34 +113,14 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+		<% @good_stats.each do |array| %>
+
 	    <tr>
-	      <td>Appealing</td>
-	      <td>40</td>
+	      <td><%= array[0].option_name %></td>
+	      <td><%= array[1] %></td>
 	    </tr>
-	    <tr>
-	      <td>Attractive</td>
-	      <td>38</td>
-	    </tr>
-	    <tr>
-	      <td>Calm</td>
-	      <td>25</td>
-	    </tr>
-	    <tr>
-	      <td>Cheerful</td>
-	      <td>12</td>
-	    </tr>
-	    <tr>
-	      <td>Clean</td>
-	      <td>10</td>
-	    </tr>
-	    <tr>
-	      <td>Empowering</td>
-	      <td>10</td>
-	    </tr>
-	    <tr>
-	      <td>Entertaining</td>
-	      <td>8</td>
-	    </tr>
+
+	    <% end %>
 	    
 	  </tbody>
 	</table>
@@ -184,34 +135,15 @@
 	    </tr>
 	  </thead>
 	  <tbody>
+
+		<% @bad_stats.each do |array| %>
+
 	    <tr>
-	      <td>Boring</td>
-	      <td>40</td>
+	      <td><%= array[0].option_name %></td>
+	      <td><%= array[1] %></td>
 	    </tr>
-	    <tr>
-	      <td>Busy</td>
-	      <td>38</td>
-	    </tr>
-	    <tr>
-	      <td>Cluttered</td>
-	      <td>25</td>
-	    </tr>
-	    <tr>
-	      <td>Complex</td>
-	      <td>12</td>
-	    </tr>
-	    <tr>
-	      <td>Confusing</td>
-	      <td>10</td>
-	    </tr>
-	    <tr>
-	      <td>Dated</td>
-	      <td>10</td>
-	    </tr>
-	    <tr>
-	      <td>Dull</td>
-	      <td>8</td>
-	    </tr>
+
+	    <% end %>
 	  </tbody>
 	</table>
 
@@ -269,13 +201,13 @@
 	var pieData = [
 			{
 				//Bad Word Count 
-				value: 40,
+				value: <%= @bad_stats_count %>,
 				color:"#c9025c"
 			},
 			{
 			
 				// Good Word Count 			
-				value : 190,
+				value : <%= @good_stats_count %>,
 				color : "#85B91E"
 			}
 

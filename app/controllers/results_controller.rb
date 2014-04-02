@@ -11,6 +11,20 @@ class ResultsController < ApplicationController
 			redirect_to root_path
 		end
 		
+		@stats = []
+		@test.test_users.each do |user|
+			@stats += user.test_options.all
+		end
+
+		# ugly code from stack overflow
+		@stats = @stats.group_by { |option| option.option_id }.map{|k,v| [v[0].option,v.size]} 
+
+		@good_stats = @stats.clone.keep_if { |array| array[0].category == "good" }.sort { |a, b| b[1] <=> a[1] }
+		@bad_stats = @stats.clone.keep_if { |array| array[0].category == "bad" }.sort { |a, b| b[1] <=> a[1] }
+
+		@good_stats_count = @good_stats.inject(0) { |sum, array| sum + array[1] }
+		@bad_stats_count = @bad_stats.inject(0) { |sum, array| sum + array[1] }
+
 	end
 
 
