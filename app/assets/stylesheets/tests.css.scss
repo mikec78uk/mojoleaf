@@ -105,6 +105,23 @@ p.no-indent {
 	width: 100%;
 }
 
+/*------------- Breadcrumb -------*/
+
+
+.breadcrumb {
+	margin-bottom: 20px;
+	font-size: 12px;
+}
+		
+.breadcrumb a, .breadcrumb a:visited {
+	text-decoration: none;
+	color: #2980b9;
+}
+
+.breadcrumb strong {
+	padding-right: 20px;
+}
+
 /*------------- Reiterate Test Details -------*/
 
 .uploaded-test {
@@ -325,18 +342,6 @@ nav li a {
 	    min-width: 100%;
 	    line-height: 32px;
 		display: block;
-		/* width: 100%;
-		border: 3px solid #eee;
-		border-radius: 0;
-		padding: 7px 10px 7px 10px;
-		margin: 10px 0 10px 0;
-		padding: 7px 10px;
-		font: inherit;
-		font-size: 14px;
-		outline: none;
-		color: #313131;
-		-webkit-appearance: none;
-		background: #fff url(/assets/select-arrow.png) no-repeat right center;*/
 	}
 
 .grey-background {
@@ -467,14 +472,6 @@ nav li a {
 	
 }
 
-/*.listing-details-time {
-	padding: 10px 0px 0px 20px;*/
-	/*text-align: center;*/
-	/*display: inline-table;
-	line-height: 40px;
-	width: 200px;
-	
-}*/
 
 .listing-details-cta {
 	padding: 10px 0px 0px 20px;

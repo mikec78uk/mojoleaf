@@ -3,6 +3,11 @@ class ResultsController < ApplicationController
 	#Make sure logged in for the following actions
 	before_action :authenticate_user!, only: [:index, :show] 
 
+	helper_method :good_percentage
+	helper_method :bad_percentage
+
+
+
 	def index
 		@test = Test.find(params[:test_id])
 		# if not the test associated with a user redirects to the homepage
@@ -96,11 +101,27 @@ class ResultsController < ApplicationController
 	end
 
 
-
 	# Whitelisting params
 
 	def test_params
 		params.require(:results).permit(:chosen_words, :bad_chosen_words)
+	end
+	
+	private
+	
+	
+	def good_percentage
+		
+		@total_count = @good_stats_count + @bad_stats_count
+		@good_percentage = (@good_stats_count/@total_count.to_f)*100	
+		@good_percentage.to_i	
+		
+	end
+	
+	def bad_percentage
+		
+		@bad_percentage = 100 - @good_percentage.to_i	
+		
 	end
 
 end

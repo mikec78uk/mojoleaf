@@ -1,7 +1,20 @@
 <%= render partial: 'layouts/header' %>
 
 
+
 <div class="wrapper">
+
+	
+	<div class="breadcrumb">
+		<strong>You are in:</strong>
+		<%= link_to "Home", root_path %> &raquo 
+		<%= link_to "Your dashboard", tests_path %> &raquo 
+		<%= @test.title %>
+		
+	</div>
+	
+	
+
 
 			<div class="test-index-listing">
 	
@@ -16,7 +29,7 @@
 					<% if @test.end_date < DateTime.now %>
 								
 								
-					<strong><%= pluralize @test.test_users.size, "person" %></strong> responded to your request for feedback <i><span class="closed">(This test is now closed)</span></i>		
+					<strong><%= pluralize @test.test_users.size, "person" %></strong> responded to your request for feedback <i><span class="closed">(closed)</span></i>		
 				
 				
 				<%else%>
@@ -32,71 +45,28 @@
 			</div>
 
 
+	<% unless @bad_stats_count == 0 &&  @good_stats_count == 0 %>
+		<h2>At a glance</h2>
+			<div id="at-a-glance" class="wordcloud">
+				
+					<% @stats.each do |array| %>
 
+						<span data-weight="<%= array[1] %>"><%= array[0].option_name %></span>
 
+					<% end %>
 
-
-
-
-<% @test.test_users.each do |user| %>
-
-	<% if user.test_options.any? %>
-
-		<h2>User #<%= user.id %></h2>
-		
-
-		<!-- SEPERATES INTO GOOD AND BAD BY USER -->
-		<h3>Good words</h3>
-		<ul>
-			<% user.test_options.where(is_good: true).each do |test_option| %>
-
-				<% if test_option.option.present? %>
-					<li><%= test_option.option.option_name %></li>
-				<% end %>
-			<% end %>
-		</ul>
-
-		<h3>Bad words</h3>
-		<ul>
-			<% user.test_options.where(is_good: false).each do |test_option| %>
-
-				<% if test_option.option.present? %>
-					<li><%= test_option.option.option_name %></li>
-				<% end %>
-			<% end %>
-		</ul> 
-
+			</div>
 	<% end %>
-<% end %>
-
-
-
-
-
-<!-- WHAT IT SHOULD FIT INTO -->
-
-
-
-	<h2>At a glance</h2>
-
-
-	<div id="at-a-glance" class="wordcloud">
-		
-		<!--<span data-weight=" Count of the word "> option.option.name </span>-->
-		<% @stats.each do |array| %>
-
-			<span data-weight="<%= array[1] %>"><%= array[0].option_name %></span>
-
-		<% end %>
-
-	</div>
-	
 	
 	
 	<h2>In detail</h2>
 	<div class="chart">
 		<p class="chart-header">
-		<span class="positive">Positive</span> vs <span class="negative">Negative</span></p>
+		<% unless @bad_stats_count == 0 &&  @good_stats_count == 0 %>
+			<span class="positive"><%= good_percentage %>&#37; Positive</span> vs <span class="negative"><%= bad_percentage %>&#37; Negative</span></p>
+		<% else %>
+			<span class="positive">Positive</span> vs <span class="negative">Negative</span></p>
+		<% end %>
 		<canvas id="good-vs-bad" height="200" width="200"></canvas>
 	</div>
 	
@@ -104,48 +74,87 @@
 	
 <div class="group">	
 	
-	<!-- Good Words listed in count descending -->
-	<table class="word-table float-left group">
-	  <thead>
-	    <tr class="positive-header">
-	      <th>Positive Words</th>
-	      <th>Times Chosen</th>
-	    </tr>
-	  </thead>
-	  <tbody>
-		<% @good_stats.each do |array| %>
+		<% if @good_stats_count == 0 %>
 
-	    <tr>
-	      <td><%= array[0].option_name %></td>
-	      <td><%= array[1] %></td>
-	    </tr>
+		<table class="word-table float-left group">
+			  <thead>
+			    <tr class="positive-header">
+			      <th>Positive connotations</th>
+			      <th></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				<tr>
+			      <td><i>Nothing so far</i></td>
+			      <td></td>
+			    </tr>
+			    
+				</tbody>
+		</table>
 
-	    <% end %>
-	    
-	  </tbody>
-	</table>
+	<% else %>
 
+		<table class="word-table float-left group">
+		  <thead>
+		    <tr class="positive-header">
+		      <th>Positive connotations</th>
+		      <th>Times selected</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			<% @good_stats.each do |array| %>
+
+		    <tr>
+		      <td><%= array[0].option_name %></td>
+		      <td><%= array[1] %></td>
+		    </tr>
+
+		    <% end %>
+		    
+		  </tbody>
+		</table>
+	<% end %>
+
+	<% if @bad_stats_count == 0 %>
+
+		<table class="word-table float-right group">
+			  <thead>
+			    <tr class="negative-header">
+			      <th>Negative connotations</th>
+			      <th></th>
+			    </tr>
+			  </thead>
+			  <tbody>
+				<tr>
+			      <td><i>Nothing so far</i></td>
+			      <td></td>
+			    </tr>
+			    
+				</tbody>
+		</table>
+
+	<% else %>
 	
-	<!-- Good Words listed in count descending -->
-	<table class="word-table float-right group">
-	  <thead>
-	    <tr class="negative-header">
-	      <th>Negative Words</th>
-	      <th>Times Chosen</th>
-	    </tr>
-	  </thead>
-	  <tbody>
+		<table class="word-table float-right group">
+		  <thead>
+		    <tr class="negative-header">
+		      <th>Negative connotations</th>
+		      <th>Times selected</th>
+		    </tr>
+		  </thead>
+		  <tbody>
 
-		<% @bad_stats.each do |array| %>
+			<% @bad_stats.each do |array| %>
 
-	    <tr>
-	      <td><%= array[0].option_name %></td>
-	      <td><%= array[1] %></td>
-	    </tr>
+		    <tr>
+		      <td><%= array[0].option_name %></td>
+		      <td><%= array[1] %></td>
+		    </tr>
 
-	    <% end %>
-	  </tbody>
+		    <% end %>
+		  </tbody>
 	</table>
+	<% end %>
 
 </div>
 
@@ -187,7 +196,7 @@
 			"options" : {
 				"color" : "gradient",
 				"rotationRatio" : 0,
-				"printMultiplier" : 3.5,
+				"printMultiplier" : 3,
 				"sort" : "random"
 			},
 			"font" : "sans-serif",
@@ -199,6 +208,22 @@
 <script>
 
 	var pieData = [
+			
+
+	<% if @bad_stats_count == 0 && @good_stats_count == 0 %>
+				{
+				//Bad Word Count 
+				value: 50,
+				color:"#c9025c"
+			},
+			{
+			
+				// Good Word Count 			
+				value : 50,
+				color : "#85B91E"
+			}
+
+	<% else %>
 			{
 				//Bad Word Count 
 				value: <%= @bad_stats_count %>,
@@ -210,7 +235,7 @@
 				value : <%= @good_stats_count %>,
 				color : "#85B91E"
 			}
-
+	<% end %>
 		
 		];
 		
