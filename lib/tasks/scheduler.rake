@@ -8,7 +8,7 @@ task completed_check: :environment do
 	
 	@no_email.each do |test|
 		# Send Email
-		
+		TestMailers.test_complete(test).deliver
 		
 		# Update Record without invoking callbacks, i.e. before_save
 		test.update_columns(results_emailed: true)

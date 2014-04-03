@@ -35,7 +35,7 @@ class TestsController < ApplicationController
 
 		if @test.save
 			
-			# To send the owner of the room an email
+			# To send the confirmation to user
 			TestMailers.test_added(@test).deliver
 			
 			# The (@test) is for the actual test just uploaded

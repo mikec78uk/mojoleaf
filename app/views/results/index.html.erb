@@ -48,7 +48,7 @@
 	<% unless @bad_stats_count == 0 &&  @good_stats_count == 0 %>
 		<h2>At a glance</h2>
 			<div id="at-a-glance" class="wordcloud">
-				
+						
 					<% @stats.each do |array| %>
 
 						<span data-weight="<%= array[1] %>"><%= array[0].option_name %></span>

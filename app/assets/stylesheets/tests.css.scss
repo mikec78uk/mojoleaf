@@ -33,10 +33,14 @@ i {
 	width: 80%;
 }
 
-h2 {
+h2, h1 {
 	font-size: 1.5em;
 	padding: 20px 0px;
 	border-bottom: solid 1px #eee;
+}
+
+h1.main-header {
+	border-bottom: none;
 }
 
 h2.congrats {
@@ -64,6 +68,9 @@ h2.dashboard {
 	line-height: 1.2em;
 }
 
+h2.copy, h1.legal {
+	border: none;
+}
 
 
 h3 {
@@ -100,9 +107,29 @@ p.no-indent {
 	padding-left: 0px;
 }
 
-
+p.copy {
+	margin-bottom: 20px;
+}
 .thanks-homepage {
 	width: 100%;
+}
+
+ol {
+	counter-reset:li;
+	list-style: decimal;
+	margin-left: 60px;
+	line-height: 20px;
+}
+
+ol li {
+	padding-bottom: 20px;
+}
+
+ul.bullet li {
+	list-style: disc;
+	margin-left: 60px;
+	line-height: 20px;
+	padding-bottom: 20px;
 }
 
 /*------------- Breadcrumb -------*/
@@ -838,8 +865,8 @@ a.asterix {
 
 .wordcloud {
 	
-	height: 300px;
-	margin: 0.5in auto;
+	height: 800px;
+	margin: 10px auto;
 	padding: 0;
 	page-break-after: always;
 	page-break-inside: avoid;
@@ -916,6 +943,48 @@ table.word-table{
 	padding: 10px 0px;
 	background-color: #c9025c;
 }
+
+/* ------- homepage flash ---------*/
+
+
+.case {
+	width: 100%;
+	float: left;
+	display: block;
+	margin-top: 20px;
+}
+
+footer {
+	width: 80%;
+	max-width: 960px;
+	display: block;
+	margin-top: 40px;
+	margin-bottom: 30px;
+	border-top: solid 1px #eee;
+	
+	
+}
+
+
+footer a {
+	text-decoration: none;
+	color: #2980b9;
+	display: block;
+	float: left;
+	padding: 0px 10px;
+	border-right: solid 1px #eee;
+	font-size: 12px;
+	
+}
+
+
+footer li a {
+	margin-top: 14px;
+}
+
+li.footer-first a {padding-left: 0px;}
+
+li.footer-last a {border-right: none;}
 
 
 

@@ -16,7 +16,7 @@
 
 <div class = "main">
 	<header class = "mojoleaf-header">
-		<h1><%= @quote.quote %><a href="#footnote" class="asterix">*</a></h1>
+		<h1 class = "main-header"><%= @quote.quote %><a href="#footnote" class="asterix">*</a></h1>
 	</header>
 
 	<div>
@@ -85,10 +85,11 @@
 
 
 
-<div id="footnote" class="wrapper">
-<p class = "footnote no-indent">* <%= @quote.quote_by %></p>
+<div id="footnote group" class="wrapper group">
+	<p class = "footnote no-indent">* <%= @quote.quote_by %></p>
 </div>
 
+<%= render partial: 'layouts/footer' %>
 
 
 
