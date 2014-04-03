@@ -34,6 +34,10 @@ class TestsController < ApplicationController
 		@test.user_id = current_user.id
 
 		if @test.save
+			
+			# To send the owner of the room an email
+			TestMailers.test_added(@test).deliver
+			
 			# The (@test) is for the actual test just uploaded
 			redirect_to test_path(@test)
 		else
