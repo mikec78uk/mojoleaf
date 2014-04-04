@@ -1,1 +1,29 @@
-500
+<%= render partial: 'layouts/header' %>
+
+
+<div class = "wrapper">
+
+<div class="error-container-500">
+	<h2 class="error-page-left">Internal Server Error</h2>
+	
+	<p class="copy">This could be because:</p>
+
+<ul class="error-list">
+	<li>It's rush hour for our servers and we can't cope</li>
+	<li>The internet's broken</li>
+	<li>Gremlins are causing havoc with the servers again</li>
+</ul>
+<p class="copy">You could try <a href="javascript:location.reload(true);" class="blue-link">refreshing the page</a>, alternatively head to the <%= link_to "Homepage", root_path, class: "blue-link" %> and go from there.</p>
+
+</div>
+
+
+</div>
+
+<%= render partial: 'layouts/footer' %>
+
+
+
+
+
+

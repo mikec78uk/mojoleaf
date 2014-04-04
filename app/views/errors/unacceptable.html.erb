@@ -1,1 +1,19 @@
-422
+<%= render partial: 'layouts/header' %>
+
+
+<div class = "wrapper">
+
+<div class="error-container-422">
+	<h2 class="error-page">We can't process your request</h2>
+	
+	<p class="center">Maybe you tried to change something you didn't have access to?</p>
+	
+	<p class="center"><%= link_to "Homepage", root_path, class: "button"%></p>
+</div>
+
+
+</div>
+
+<%= render partial: 'layouts/footer' %>
+
+
