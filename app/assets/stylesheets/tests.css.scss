@@ -442,10 +442,31 @@ nav li a {
  
 .button {
 	background-color: #85B91E;
-    border-color: #007095;
+    border-color: #85B91E;
     border-style: solid;
-    border-width: 0;
+    border-width: 1px;
     color: #FFFFFF;
+    cursor: pointer;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0px;
+    padding: 20px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease-out 0s;
+    display: inline-block;
+    text-transform: uppercase;
+
+    }
+    
+.button:disabled {
+	background-color: #FFFFFF;
+    border-color: #eeeeee;
+    border-style: solid;
+    border-width: 1px;
+    color: #999999;
     cursor: pointer;
     font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
     /*font-size: 1rem;*/
@@ -461,8 +482,6 @@ nav li a {
     text-transform: uppercase;
 
     }
-    
-
     
     
 .secondary {
@@ -506,7 +525,7 @@ nav li a {
 }
 
 .donate {
-	border-color: #85B91E;
+	background-color: #eee;
 }
 
 .test-listing p {
