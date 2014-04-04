@@ -15,7 +15,8 @@
 //= require modernizr.custom
 //= require demo1
 //= require classie
-//= require jquery.awesomeCloud-0.2.min
+//= require d3.min
+//= require d3.layout.cloud
 //= require Chart.min
 //= require snap.svg-min
 //= require_self
