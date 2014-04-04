@@ -4,13 +4,17 @@ class TestMailers < ActionMailer::Base
   
   
   def test_added(test)
+  	@test = test
+  	
+  	@user = @test.user
   
-  
-  	mail to: test.user.email, subject: "Your design has been added to mojoleaf"  
+  	mail to: @user.email, subject: "Your design has been added to mojoleaf"  
   end
   
   def test_complete(test)
-  
+  	@test = test
+  	
+  	@user = @test.user  
   
   	mail to: @user.email, subject: "Your final mojoleaf results are ready"
   end  

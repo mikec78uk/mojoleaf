@@ -438,6 +438,29 @@ nav li a {
     }
     
     
+.button-disabled {
+	background-color: #FFFFFF;
+    border-color: #999999;
+    border-style: solid;
+    border-width: 0;
+    color: #999999;
+    cursor: pointer;
+    font-family: "Helvetica Neue","Helvetica",Helvetica,Arial,sans-serif;
+    /*font-size: 1rem;*/
+    font-weight: normal;
+    line-height: normal;
+    margin: 0px;
+    padding: 20px 20px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 300ms ease-out 0s;
+    display: inline-block;
+    text-transform: uppercase;
+
+    }
+    
+    
 .secondary {
 	background-color: #c9025c;
 }
@@ -1063,8 +1086,6 @@ li.footer-last a {border-right: none;}
 
 	width: 300px;
 	}
-
-	
 
 
 }

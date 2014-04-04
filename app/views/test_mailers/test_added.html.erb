@@ -1,34 +1,26 @@
-Congratulations, your test has been successfully added to mojoleaf.com. This means that anyone who comes to mojoleaf.com will be able to tell you their first impressions of your design.
+<h2>Congratulations</h2> 
+<p>Your test has been successfully added to <a href="http://www.mojoleaf.com" target="_blank">mojoleaf.com</a></p> 
+
+<p>Make sure you spread the word and let people know you want feedback, otherwise no one will know your design is there and you won't get the feedback you're after.</p>
 
 
-If you chose to do a 'Private Test' make sure you spread the word and let people know you want feedback otherwise no one will know your design is there.
+<p><strong>Spread The Word:</strong></p>
+
+<p>Send out the short url: <%= @test.short_url %></p>
+
+<p>Share your design on <a href="http://www.facebook.com/share.php?u=<%= @test.short_url %>" target="_blank">Facebook</a></p>
 
 
-Spread The Word:
+<p>Tweet about it on <a href="http://twitter.com/home?status=What+do+you+think+of+my+design%3F-+<%= @test.short_url %>" target="_blank">Twitter</a></p>
 
 
-Share your design on Twitter: http://twitter.com/home?status=What+do+you+think+of+my+design%3F-+http://bit.ly/O2xThT
+		<p>Your test will last for <%= pluralize @test.duration, "day" %> and end on <strong><%= @test.end_date.strftime('%A, %e %B %Y') %></strong> around <%= @test.end_date.strftime('%H.%M') %></p>
 
 
-Share my design on Facebook: http://www.facebook.com/share.php?u=http://bit.ly/O2xThT
+
+<h3>What happens next?</h3>
 
 
-Direct Link to your design: http://bit.ly/O2xThT
+<p>When your test ends, we'll let you know.</p>
+<p>Alternatively, you can see how your test is going at any time from <%= link_to "Your dashboard", host: 'localhost:3000', controller: "tests", action: "index"  %>.</p>
 
-
-This will be available until 22 Mar 2014 - 18:39 GMT / 14:39 EDT / 11:39 PDT.
-
-
-What happens next?
-
-
-When your test ends the results will be emailed directly to you. By doing it this way you don't have to worry about remembering yet another username and password, the results come directly to you when they're complete.
-
-
-If you have any questions, you can contact us at http://www.mojoleaf.com/index.php#contact
-
-
-The small print:
-
-
-If your design is reported to us as being 'inappropriate' and we agree it will be removed from the site and no results will be provided.
