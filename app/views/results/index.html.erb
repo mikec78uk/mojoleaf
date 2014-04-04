@@ -43,9 +43,23 @@
 				<%= link_to "Delete this design", test_path(@test), method: :delete, confirm: "Are you sure you want to delete this design?" %></p>
 			
 			</div>
-
-
-		
+	<% if @test.end_date < DateTime.now %>
+			<div class="test-index-listing donate">
+					<h3>Help keep Mojoleaf going</h3>
+			<p class="no-indent copy">Although Mojoleaf is free to use, unfortunately it's not free to run.</p> 
+			<p class="no-indent copy">If you've found using Mojoleaf useful, a small donation through Paypal would help to keep it going, we'd really appreciate it.</p>   
+			
+				<div class="centre">
+					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+					<input type="hidden" name="cmd" value="_s-xclick">
+					<input type="hidden" name="hosted_button_id" value="QPB85RYNRJLNE">
+					<input type="image" src="https://www.paypalobjects.com/en_GB/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal – The safer, easier way to pay online.">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_GB/i/scr/pixel.gif" width="1" height="1">
+					</form>
+				</div>	
+			
+			</div>
+	<% end %>
 
 
 
