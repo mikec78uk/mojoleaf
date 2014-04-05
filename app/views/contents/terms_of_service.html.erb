@@ -35,13 +35,19 @@
 <ol>
 
 	
-	
 	<% if user_signed_in? %>
+	
+		<% if Test.where(:user_id => [current_user.id]).size > 0 %>
+			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any (this section will contain a link to cancel your account once you have deleted <strong><%= pluralize Test.where(:user_id => [current_user.id]).size, "test" %></strong> from <%= link_to "Your dashboard", tests_path, class: "blue-link" %>).</li>
+		<% else %>
 			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any time by clicking: <%= link_to 'Delete my account', user_registration_path, class: "blue-link", :confirm => 'We hate to see you go...are you sure you want to delete your account?', :method => :delete %></li>
+		
+		<% end %>	
+			
 		
 	<%else%>
 		
-			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any time (this section will contain a link to cancel your account once you are logged in).</li>
+			<li>You are solely responsible for properly cancelling your account. An email to cancel your account is not considered cancellation. You can cancel your account at any time (this section will contain a link to cancel your account once you are logged in and have deleted all of your tests).</li>
 		
 	<% end %>
 	

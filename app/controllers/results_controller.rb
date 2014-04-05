@@ -120,8 +120,7 @@ class ResultsController < ApplicationController
 	
 	def bad_percentage
 		# Calculates the % difference between good and the total count		
-		@bad_percentage = 100 - @good_percentage.to_i	
-		
+		@bad_percentage = 100 - @good_percentage.to_i		
 	end
 
 end
