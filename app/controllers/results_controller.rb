@@ -56,7 +56,10 @@ class ResultsController < ApplicationController
 			redirect_to expired_test_path(@test)
 		end
 
-		# build result options
+
+		# Need to see if they've already competed the test
+
+
 	end
 
 	def create
@@ -67,6 +70,12 @@ class ResultsController < ApplicationController
 
 
 		if @test_user.save
+		
+		
+			# Set the the test_user user agent
+			
+			
+			
 
 			params[:results][:chosen_words].delete_if { |word| word.blank? }.each do |chosen|
 				@test_user.test_options.create(option_id: chosen, is_good: true)
