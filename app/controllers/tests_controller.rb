@@ -38,6 +38,8 @@ class TestsController < ApplicationController
 			# To send the confirmation to user
 			TestMailers.test_added(@test).deliver
 			
+			# Mark the test as taken
+			
 			# The (@test) is for the actual test just uploaded
 			redirect_to test_path(@test)
 		else
