@@ -72,6 +72,9 @@ class TestsController < ApplicationController
 
 	def expired
 	end
+	
+	def already_completed
+	end
 
 	def test_params
 		# Allows the user to add a title, duration and image

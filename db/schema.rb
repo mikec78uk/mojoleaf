@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140402063358) do
+ActiveRecord::Schema.define(version: 20140405180150) do
 
   create_table "contents", force: true do |t|
     t.string   "quote"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20140402063358) do
     t.integer  "test_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "ip_address"
+    t.string   "user_agent"
   end
 
   create_table "tests", force: true do |t|

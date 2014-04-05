@@ -27,6 +27,12 @@ Mojoleaf::Application.routes.draw do
 	  end
 	end
 	
+  resources :tests do
+	  member do
+	    get 'already_completed'
+	  end
+	end
+
 	
 	resources :contents do
 	 member do

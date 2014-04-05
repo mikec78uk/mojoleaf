@@ -45,6 +45,11 @@ class ResultsController < ApplicationController
 		#Find the Test
 		@test = Test.find(params[:test_id])
 		
+		# Redirects if the customer has already completed the test
+		if TestUser.exists?(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
+			redirect_to already_completed_test_path(@test)
+		end
+		
 		
 		# Checks the enddate hasn't passed, it it has 
 		# displays the expired page
@@ -57,9 +62,6 @@ class ResultsController < ApplicationController
 		end
 
 
-		# Need to see if they've already competed the test
-
-
 	end
 
 	def create
@@ -67,15 +69,12 @@ class ResultsController < ApplicationController
 		@test = Test.find(params[:test_id])	
 			
 		@test_user = @test.test_users.new(test_params)
-
+		
+		# Set the the test_user user agent
+		@test_user.ip_address = request.ip
+		@test_user.user_agent = request.user_agent
 
 		if @test_user.save
-		
-		
-			# Set the the test_user user agent
-			
-			
-			
 
 			params[:results][:chosen_words].delete_if { |word| word.blank? }.each do |chosen|
 				@test_user.test_options.create(option_id: chosen, is_good: true)
@@ -86,11 +85,11 @@ class ResultsController < ApplicationController
 			end
 
 			redirect_to thanks_test_path(@test)
-			#redirect_to root_path
-			#(:controller => 'contents', :action => 'thanks')
+
 		else
 			flash[:error] = "Ah nuts! We had a little hiccup. Would you be able to tell us again what you think...pretty please"
 			render "new"
+			
 		end
 	end
 
