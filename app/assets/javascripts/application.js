@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require analytics.js.coffee
 //= require modernizr.custom
 //= require demo1
 //= require classie
