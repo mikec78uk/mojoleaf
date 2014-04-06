@@ -43,7 +43,7 @@
 						<% if test.image? %>
 							<%= link_to (image_tag (test.image(:thumbnail))), test_results_path(test) %>
 							<% end %>
-					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, new_test_result_path(test) %></span>
+					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, test_results_path(test) %></span>
 	
 						
 					</br><strong><%= pluralize test.test_users.size, "person" %></strong> gave their feedback</p>
@@ -63,7 +63,7 @@
 						<% if test.image? %>
 							<%= link_to (image_tag (test.image(:thumbnail))), test_results_path(test) %>
 						<% end %>
-					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, new_test_result_path(test) %></span>
+					<p class="listing-details-text"> <span class="listing-title"><%= link_to test.title, test_results_path(test) %></span>
 	
 						
 					</br><strong><%= pluralize test.test_users.size, "person" %></strong> responded so far with <strong><%= distance_of_time_in_words(DateTime.now,test.end_date)

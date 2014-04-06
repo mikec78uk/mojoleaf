@@ -63,3 +63,6 @@ gem 'googl'
 
 # For User Sign in
 gem 'devise'
+
+# Added to take advantage of Amazon S3
+gem 'aws-sdk'

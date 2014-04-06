@@ -8,7 +8,7 @@
     <%= favicon_link_tag '/favicon.ico' %>
     <%= favicon_link_tag '/touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
    
-
+	<%= javascript_include_tag "jquery.min" %>
 	<%= javascript_include_tag "jquery" %>
   	<%= javascript_include_tag "jquery_ujs" %>	
 	<%= javascript_include_tag "d3.min" %>
@@ -16,6 +16,7 @@
 	<%= javascript_include_tag "Chart.min" %>
 	<%= javascript_include_tag "analytics" %>
 	<%= javascript_include_tag "modernizr.custom" %>
+	<%= javascript_include_tag "snap.svg-min" %>
 	
 	
     <%= stylesheet_link_tag    "application" %>
@@ -38,7 +39,7 @@
   
 	<%= javascript_include_tag "demo1"%>
 	<%= javascript_include_tag "classie" %>
-	<%= javascript_include_tag "snap.svg-min" %>
+	
   
   
   <script>
