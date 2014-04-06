@@ -9,6 +9,8 @@
             <%= flash[:alert] %>
           </div>
 <% end %>
+
+
       
 
 <%= render partial: 'layouts/header' %>
@@ -31,7 +33,7 @@
 		
 	<%else%>
 		
-		<%= link_to "Let's get started", new_test_path, class: "button"%>
+		<%= link_to "Let's get started", tests_path, class: "button"%>
 		
 	<% end %>
 		
@@ -75,7 +77,20 @@
 			A negative first impression means that customers are more likely to find fault, even if a product’s overall usability is good and the product offers real value.</p>
 			<p class="no-indent">The issue with just asking people what they prefer as part of a usability test, for example, is that the response we are looking for from users is more emotional, it is less about users’ ability to accomplish tasks and more about their affective response to a given design and the Reaction Card method can do a much better job of informing and helping to achieve consensus on design decisions.</p>
 			<div class="main-cta">
-				<%= link_to "Let's get started", new_test_path, class: "button"%>
+				
+				
+					<% if user_signed_in? %>
+		
+					<%= link_to "Add your design", new_test_path, class: "button"%>
+					
+				<%else%>
+					
+					<%= link_to "Let's get started", tests_path, class: "button"%>
+					
+				<% end %>
+							
+				
+	
 			</div>
 		</div>
 	
