@@ -282,6 +282,7 @@ nav {
 	border-bottom: solid 1px #eee;
 	padding: 0 20px 10px 20px;
 	
+	
 }
 
 
@@ -303,33 +304,26 @@ nav li a {
 
 
 	.logo {
-	    background: url("/assets/logo-leaf.svg") repeat scroll left top #85B91E;
+	    background: url("/assets/mojoleaf-logo.png") no-repeat scroll left center;
+	    display: block;
 	    float: left;
-	    height: 60px;
+	    height: 40px;
 	    margin: 0;
 	    text-indent: -9999px;
-	    /*transition: background-position 0.5s ease 0s;
-	    white-space: nowrap;*/
-	    width: 60px;
-	    -webkit-background-size: 60px 60px;
-		-moz-background-size: 60px 60px;
-		-o-background-size: 60px 60px;
-	    background-size: 60px 60px;
+
+	    width: 200px;
+	    margin-top: 14px;
+	    -webkit-background-size: auto 40px;
+		-moz-background-size: auto 40px;
+		-o-background-size: auto 40px;
+	    background-size: auto 40px;
 
 		}
-	/*.logo:hover, .logo:active {
-		    background-position: right top;
-		}*/
-	/*@media not all, (min-resolution: 192dpi) {
-		.logo {
-			    background-image: url("/assets/logo-sub@2x.png");
-			    background-size: 60px 60px;
-			}
-		}*/
+
 	.logo a {
 		    display: block;
 		    height: 60px;
-		    width: 60px;
+		    width: 230px;
 		    border: none;
 		}                       
 
