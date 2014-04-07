@@ -80,7 +80,7 @@ class Test < ActiveRecord::Base
 		
 	# This shortens the URL after saving by using the id - NEED TO CHANGE TO DOMAIN WHEN GOING LIVE	
 	def add_short_url
-		short_url = Googl.shorten("http://mojoleaf.dev/tests/"+self.id.to_s+"/results/new").short_url
+		short_url = Googl.shorten("http://mojoleaf.herokuapp.com/tests/"+self.id.to_s+"/results/new").short_url
 
     	update_column(:short_url, short_url)
 	end
