@@ -27,10 +27,10 @@ Mojoleaf::Application.configure do
   # config.assets.css_compressor = :sass
 
   # Do not fallback to assets pipeline if a precompiled asset is missed.
-  config.assets.compile = false
+  config.assets.compile = true
 
   # Generate digests for assets URLs.
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Version of your assets, change this if you want to expire all your assets.
   config.assets.version = '1.0'
@@ -40,7 +40,7 @@ Mojoleaf::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  # config.force_ssl = true
+  config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info
@@ -80,4 +80,13 @@ Mojoleaf::Application.configure do
   
     # Devise mailers
   config.action_mailer.default_url_options = { host: 'http://www.mojoleaf.com' }
+  
+  config.paperclip_defaults = {
+ 	:storage => :s3,
+ 	:s3_credentials => {
+	:bucket => ENV['mojoleaf-uploads'],
+    :access_key_id => ENV['AKIAIABTUSPXQJTBYHGQ'],
+    :secret_access_key => ENV['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']
+  }
+}
 end
