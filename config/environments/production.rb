@@ -79,14 +79,7 @@ Mojoleaf::Application.configure do
   config.log_formatter = ::Logger::Formatter.new
   
     # Devise mailers
-  config.action_mailer.default_url_options = { host: 'http://www.mojoleaf.com' }
+  #config.action_mailer.default_url_options = { host: 'http://www.mojoleaf.com' }
   
-  config.paperclip_defaults = {
- 	:storage => :s3,
- 	:s3_credentials => {
-	:bucket => ENV['mojoleaf-uploads'],
-    :access_key_id => ENV['AKIAIABTUSPXQJTBYHGQ'],
-    :secret_access_key => ENV['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']
-  }
-}
+
 end
