@@ -74,3 +74,6 @@ gem 'devise'
 gem 'aws-sdk'
 
 gem 'mail'
+
+# New relic for monitoring on Heroku
+gem 'newrelic_rpm'
