@@ -57,9 +57,9 @@ gem 'paperclip'
 gem 'simple_form'
 
 # Social Login
-gem 'omniauth'
-gem 'omniauth-facebook'
-gem 'omniauth-twitter'
+#gem 'omniauth'
+#gem 'omniauth-facebook'
+#gem 'omniauth-twitter'
 
 # Zurb Foundation
 # gem 'foundation-rails'
@@ -77,3 +77,6 @@ gem 'mail'
 
 # New relic for monitoring on Heroku
 gem 'newrelic_rpm'
+
+# For assessing Heroku problem
+gem 'gem_bench', :require => false, :group => :development
