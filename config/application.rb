@@ -22,5 +22,6 @@ module Mojoleaf
     
 	config.exceptions_app = self.routes
     config.assets.initialize_on_precompile = false
+    config.paths['app/views'] << "app/views/devise"
   end
 end
