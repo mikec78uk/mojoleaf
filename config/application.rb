@@ -24,8 +24,6 @@ module Mojoleaf
     config.assets.initialize_on_precompile = false
     config.paths['app/views'] << "app/views/devise"
 
-    if Rack::Utils.respond_to?("key_space_limit=")
-      Rack::Utils.key_space_limit = 262144
-    end
+
   end
 end

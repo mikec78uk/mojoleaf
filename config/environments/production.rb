@@ -81,6 +81,8 @@ Mojoleaf::Application.configure do
     # Devise mailers
   #config.action_mailer.default_url_options = { host: 'http://www.mojoleaf.com' }
   config.action_mailer.default_url_options = { :host => 'www.mojoleaf.com'} 
+
+  
   
 
 end
