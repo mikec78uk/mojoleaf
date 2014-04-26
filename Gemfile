@@ -43,7 +43,7 @@ end
 gem 'bcrypt-ruby', '~> 3.1.2'
 
 # Use unicorn as the app server
-#gem 'unicorn'
+gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
@@ -77,7 +77,7 @@ gem 'aws-sdk'
 gem 'mail'
 
 # New relic for monitoring on Heroku
-#ßgem 'newrelic_rpm'
+gem 'newrelic_rpm'
 
 # For assessing Heroku problem
 gem 'gem_bench', :require => false, :group => :development
