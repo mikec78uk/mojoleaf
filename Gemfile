@@ -77,7 +77,7 @@ gem 'aws-sdk'
 gem 'mail'
 
 # New relic for monitoring on Heroku
-gem 'newrelic_rpm'
+#ßgem 'newrelic_rpm'
 
 # For assessing Heroku problem
 gem 'gem_bench', :require => false, :group => :development
