@@ -10,7 +10,21 @@
  </div>
  <div class="thanks-homepage">
  	<div class="centre">
- <%= link_to "Homepage", root_path, class: "button center" %></div>
+ 
+
+ 		<% if @current_tests.blank? %>
+ 			<%= link_to "Homepage", root_path, class: "button center" %>
+ 		<% else %>
+			<a class="button center" href="<%= @test.destination_url %>" target=“_blank”>Continue</a>
+		<% end %>
+
+
+
+</div>
+
+
+ 
+
  </div>
  
  </div>

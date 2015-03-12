@@ -75,8 +75,14 @@ class Test < ActiveRecord::Base
 				self.duration = 20
 			when '21 days (3 weeks)'
 				self.duration = 21
-			end 
-		end
+		end 
+
+		# Checks that http or https is present in the destination_url and adds it if not
+		unless self.destination_url[/\Ahttp:\/\//] || self.destination_url[/\Ahttps:\/\//]
+	    	self.destination_url = "http://#{self.destination_url}"
+	 	end
+
+	end
 		
 	# This shortens the URL after saving by using the id - NEED TO CHANGE TO DOMAIN WHEN GOING LIVE	
 	def add_short_url

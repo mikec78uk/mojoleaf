@@ -68,6 +68,7 @@ class TestsController < ApplicationController
 
 
 	def thanks
+		@test = Test.find(params[:id])
 	end
 
 	def expired
@@ -78,7 +79,7 @@ class TestsController < ApplicationController
 
 	def test_params
 		# Allows the user to add a title, duration and image
-		params.require(:test).permit(:title, :duration, :image)
+		params.require(:test).permit(:title, :duration, :image, :destination_url)
 	end
 
 

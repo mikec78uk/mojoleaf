@@ -351,7 +351,8 @@ nav li a {
 
 	input[type="text"],
 	input[type="email"],
-	input[type="password"] {
+	input[type="password"],
+	input[type="url"] {
 	    -moz-box-sizing: border-box;
 	    background-color: #FFFFFF;
 	    border: 1px solid #CCCCCC;
@@ -380,6 +381,7 @@ nav li a {
 	 input[type="text"],
 	 input[type="email"],
 	 input[type="password"],
+	 input[type="url"],
 	 input[type="file"], select {
 		 margin: 10px 0px;
 	 }
@@ -412,6 +414,7 @@ nav li a {
 	 label {
 	 	display: block;
 		margin-top: 20px;
+		line-height: 20px;
 	 }
 	 
 	 .field_with_hint span.hint {
