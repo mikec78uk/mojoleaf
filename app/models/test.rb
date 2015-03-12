@@ -77,9 +77,9 @@ class Test < ActiveRecord::Base
 				self.duration = 21
 		end 
 
-		# Checks that http or https is present in the destination_url and adds it if not
-		unless self.destination_url[/\Ahttp:\/\//] || self.destination_url[/\Ahttps:\/\//]
-	    	self.destination_url = "http://#{self.destination_url}"
+		# Checks that http or https is present in the chosen_destination and adds it if not
+		unless self.chosen_destination[/\Ahttp:\/\//] || self.chosen_destination[/\Ahttps:\/\//]
+	    	self.chosen_destination = "http://#{self.chosen_destination}"
 	 	end
 
 	end

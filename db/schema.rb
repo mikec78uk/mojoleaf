@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312165731) do
+ActiveRecord::Schema.define(version: 20150312195422) do
 
   create_table "contents", force: true do |t|
     t.string   "quote"
@@ -72,7 +72,7 @@ ActiveRecord::Schema.define(version: 20150312165731) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "short_url"
-    t.string   "destination_url"
+    t.string   "chosen_destination"
   end
 
   create_table "users", force: true do |t|

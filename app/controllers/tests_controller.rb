@@ -79,7 +79,7 @@ class TestsController < ApplicationController
 
 	def test_params
 		# Allows the user to add a title, duration and image
-		params.require(:test).permit(:title, :duration, :image, :destination_url)
+		params.require(:test).permit(:title, :duration, :image, :chosen_destination)
 	end
 
 
