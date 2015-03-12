@@ -12,7 +12,7 @@
  	<div class="centre">
  
 
- 		<% if @test.chosen_destination == "http://" || @test.chosen_destination.empty? %>
+ 		<% if @test.chosen_destination == "http://" || @test.chosen_destination.blank? %>
  			<%= link_to "Homepage", root_path, class: "button center" %>
  		<% else %>
 			<a class="button center" href="<%= @test.chosen_destination %>" target=“_blank”>Continue</a>
