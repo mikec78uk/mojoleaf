@@ -72,9 +72,11 @@ class TestsController < ApplicationController
 	end
 
 	def expired
+		@test = Test.find(params[:id])
 	end
 	
 	def already_completed
+		@test = Test.find(params[:id])
 	end
 
 	def test_params
