@@ -79,7 +79,7 @@ class Test < ActiveRecord::Base
 
 		# Checks that http or https is present in the chosen_destination and adds it if not
 		
-		if @current_tests.blank?
+		unless @current_tests.blank?
 			unless self.chosen_destination[/\Ahttp:\/\//] || self.chosen_destination[/\Ahttps:\/\//]
 		    	self.chosen_destination = "http://#{self.chosen_destination}"
 		 	end
