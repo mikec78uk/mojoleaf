@@ -9,7 +9,20 @@
  It looks like you've already left your feedback</span></h2>
  	
 	
-	<p class="center"><%= link_to "Homepage", root_path, class: "button"%></p>
+	<p class="center">
+
+		<% if @test.chosen_destination == "http://" %>
+ 			<%= link_to "Homepage", root_path, class: "button"%>
+ 		<% else %>
+			<a class="button" href="<%= @test.chosen_destination %>" target=“_blank”>Continue</a>
+		<% end %>
+
+	</p>
+
+
+
+
+
 </div>
  
  
