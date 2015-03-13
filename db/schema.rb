@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150312195422) do
+ActiveRecord::Schema.define(version: 20150313163405) do
 
   create_table "contents", force: true do |t|
     t.string   "quote"
-    t.string   "quote_by"
+    t.text     "quote_by",   limit: 255
     t.string   "tagline"
     t.datetime "created_at"
     t.datetime "updated_at"

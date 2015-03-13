@@ -107,7 +107,7 @@
 
 
 <div id="footnote" class="wrapper group">
-	<p class = "footnote no-indent">* <%= @quote.quote_by %></p>
+	<p class = "footnote no-indent">* <%= raw @quote.quote_by %></p>
 </div>
 
 <%= render partial: 'layouts/footer' %>
