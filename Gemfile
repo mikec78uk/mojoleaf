@@ -65,8 +65,8 @@ gem 'simple_form'
 # Zurb Foundation
 # gem 'foundation-rails'
 
-# Google URL shortener
-gem 'googl'
+# Google URL shortener - Specific version to include authentication key
+gem 'googl', '~> 0.7.0'
 
 # For User Sign in
 gem 'devise'

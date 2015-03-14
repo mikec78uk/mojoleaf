@@ -88,11 +88,12 @@ class Test < ActiveRecord::Base
 		
 	# This shortens the URL after saving by using the id - NEED TO CHANGE TO DOMAIN WHEN GOING LIVE	
 	def add_short_url
-		short_url = Googl.shorten("http://www.mojoleaf.com/tests/"+self.id.to_s+"/results/new").short_url
+		# ORIGINAL BEFORE UPGRADING GEM
+		#short_url = Googl.shorten("http://www.mojoleaf.com/tests/"+self.id.to_s+"/results/new").short_url
 
 	# Updated due to usage limits https://github.com/zigotto/googl
-		#short_url = Googl.shorten("http://www.mojoleaf.com/tests/"+self.id.to_s+"/results/new", "<%= request.remote_ip %>","AIzaSyB22K5O_HfSdtyU0HfSgIpgyvDz02ynlWI").short_url
-
+		short_url = Googl.shorten("http://www.mojoleaf.com/tests/"+self.id.to_s+"/results/new", "<%= request.remote_ip %>","AIzaSyB22K5O_HfSdtyU0HfSgIpgyvDz02ynlWI").short_url
+		
 
     	update_column(:short_url, short_url)
 	end

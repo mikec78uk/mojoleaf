@@ -55,12 +55,12 @@ GEM
     execjs (2.0.2)
     gem_bench (0.0.8)
       bundler (> 1.2)
-    googl (0.6.3)
-      httparty (~> 0.10.0)
+    googl (0.7.0)
+      httparty (~> 0.10)
       json (>= 1.4.6)
     hike (1.2.3)
-    httparty (0.10.2)
-      multi_json (~> 1.0)
+    httparty (0.13.1)
+      json (~> 1.8)
       multi_xml (>= 0.5.2)
     i18n (0.6.9)
     jbuilder (1.5.3)
@@ -161,7 +161,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   gem_bench
-  googl
+  googl (~> 0.7.0)
   jbuilder (~> 1.2)
   jquery-rails
   mail
