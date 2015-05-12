@@ -46,7 +46,9 @@ class ResultsController < ApplicationController
 		@test = Test.find(params[:test_id])
 		
 		# Redirects if the customer has already completed the test
-		if TestUser.exists?(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
+		#if TestUser.exists?(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
+		if cookies[@test].exists?
+			#(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
 			redirect_to already_completed_test_path(@test)
 		end
 		
@@ -83,6 +85,9 @@ class ResultsController < ApplicationController
 			params[:results][:bad_chosen_words].delete_if { |word| word.blank? }.each do |chosen|
 				@test_user.test_options.create(option_id: chosen, is_good: false)
 			end
+			
+			#SETS COOKIE TO SAY COMPLETED
+			cookies[@test]= { :value => @test, :expires => 21.days.from_now }
 
 			redirect_to thanks_test_path(@test)
 
