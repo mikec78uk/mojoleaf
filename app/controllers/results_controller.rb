@@ -87,7 +87,7 @@ class ResultsController < ApplicationController
 			end
 			
 			#SETS COOKIE TO SAY COMPLETED
-			cookies[@test]= { :value => @test, :expires => 21.days.from_now }
+			cookies[(params[:test_id])]= { :value => @test, :expires => 21.days.from_now }
 
 			redirect_to thanks_test_path(@test)
 
