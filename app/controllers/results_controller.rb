@@ -46,8 +46,8 @@ class ResultsController < ApplicationController
 		@test = Test.find(params[:test_id])
 		
 		# Redirects if the customer has already completed the test
-		#if TestUser.exists?(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
-		if cookies[@test].exists?
+		if TestUser.exists?(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
+		#if cookies[@test].exists?
 			#(:test_id => params[:test_id], :ip_address => request.remote_ip, :user_agent => request.user_agent)
 			redirect_to already_completed_test_path(@test)
 		end
